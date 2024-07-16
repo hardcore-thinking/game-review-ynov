@@ -1,4 +1,31 @@
-import './Home.css'
+import { useState } from 'react';
+
+import './Home.css';
+
+let debugLogin = false;
+
+function LoginPopup() {
+	function completeLoggingIn(event) {
+		event.preventDefault();
+		debugLogin = true;
+	}
+
+	return (
+		<div className="LoginPopup">
+			<div className="LoginFormWrapper">
+				<h2> Login </h2>
+				<hr />
+				<form method="POST" onSubmit={completeLoggingIn}>
+					<label for="Email"> Email </label>
+					<input type="email" id="Mail" required />
+					<label for="Password"> Password </label>
+					<input type="password" id="Password" required />
+					<input type="submit" value="Submit"/>
+				</form>
+			</div>
+		</div>
+	);
+}
 
 function GameReview({ name, grade }) {
 	const bad = "red";
@@ -82,13 +109,18 @@ function HorizontalScrollable({title}) {
 }
 
 export default function Home() {
-	const gameList = Array(15);
+	document.body.style.overflow = debugLogin ? "hidden" : "scroll";
 
 	return (
-		<div className="Home">
-			<HorizontalScrollable title="🔥 Best reviews 🔥" />
-			<HorizontalScrollable title="✨  Released lately ✨" />
-			<HorizontalScrollable title="💚 Recommended by our team 💚" />
-		</div>
+		<>
+			<div className="Home">
+				<HorizontalScrollable title="🔥 Best reviews 🔥" />
+				<HorizontalScrollable title="✨  Released lately ✨" />
+				<HorizontalScrollable title="💚 Recommended by our team 💚" />
+			</div>
+			{ debugLogin &&
+				<LoginPopup />
+			}
+		</>
 	);
 }

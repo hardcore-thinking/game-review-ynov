@@ -2,7 +2,7 @@ FROM node:18.10.0-alpine3.15 AS react
 
 WORKDIR /usr/src/app
 
-COPY ./game-review/ .
+COPY ./game-review/ ./.
 
 RUN npm update
 RUN npm install
