@@ -1,21 +1,23 @@
-version: '3'
-
 services:
   react:
-    image: game-review
+    container_name: frontend
     build:
-      context: ./
+      context: .
+      target: react
     restart: always
     ports:
       - "3008:3000"
+      - "3009:3001"
     links:
       - "db:database"
-    volumes:
-       - ./game-review:/usr/src/app/game-review-ynov
-       - /usr/src/app/game-review/node_modules
+    #volumes:
+    #   - ./.:/usr/src/app/game-review-ynov
 
   db:
-    image: mysql:5.7
+    container_name: database
+    build:
+      context: .
+      target: db
     restart: always
     ports:
       - "3307:3306"
