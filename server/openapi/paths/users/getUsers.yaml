@@ -1,0 +1,24 @@
+get:
+  tags:
+    - "users"
+  security:
+    - BearerAuth: []
+  summary: "Super admin and admin specific option. Returns all users."
+  description: "Return all the users registered on the API."
+  operationId: getUsers
+  responses:
+    "200":
+      description: "Users retrieved successfully."
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              description:
+                type: string
+                default: "OK"
+                example: "OK"
+              users:
+                $ref: "../../schemas.yaml#/UserList"
+    "500":
+      $ref: "../../responses/InternalServerError.yaml"

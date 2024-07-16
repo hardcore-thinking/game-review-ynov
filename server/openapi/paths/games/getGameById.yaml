@@ -1,0 +1,18 @@
+get:
+  tags:
+    - "games"
+  summary: "Returns a specific game from its id."
+  description: "Return a specific game from its id."
+  operationId: getGameById
+  parameters:
+    - $ref: "../../parameters/idInPath.yaml"
+    - $ref: "../../parameters/langInURL.yaml"
+  responses:
+    "200":
+      description: "Game retrieved successfully."
+      content:
+        application/json:
+          schema:
+            $ref: "../../schemas.yaml#/Game"
+    "500":
+      $ref: "../../responses/InternalServerError.yaml"

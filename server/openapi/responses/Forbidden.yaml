@@ -1,0 +1,11 @@
+description: "The request is OK but the user doesn't have the role necessary to access the resource."
+content:
+  application/json:
+    schema:
+      type: object
+      required: [description]
+      properties:
+        description:
+          type: string
+          default: "Forbidden."
+          example: "Insufficient authorizations."

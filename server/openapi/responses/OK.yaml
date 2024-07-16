@@ -1,0 +1,11 @@
+description: "Everything went well."
+content:
+  application/json:
+    schema:
+      type: object
+      required: [description]
+      properties:
+        description:
+          type: string
+          default: "OK."
+          example: "Request executed successfully."

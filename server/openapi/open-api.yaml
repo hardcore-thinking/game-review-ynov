@@ -1,0 +1,201 @@
+openapi: 3.0.3
+info:
+  title: "Everything Nintendo"
+  description: "The goal of this API is to let users retrieve informations on Nintendo consoles and games, but also on publishers, development studios and some financial informations."
+  contact:
+    email: alexy.mansuy@ynov.com
+  version: 1.0.0
+
+servers:
+  - url: "{protocol}://{server}"
+    variables:
+      protocol:
+        default: http
+      server:
+        default: localhost:8080
+
+tags:
+  - name: "auth"
+    description: "Lets the user manage their connection to the API."
+  - name: "users"
+    description: "Super admin and admin specific option. Lets them manage users."
+  - name: "consoles"
+    description: "Lets the user retrieve Nintendo consoles from all times."
+  - name: "games"
+    description: "Lets the user retrieve Nintendo games from all times."
+  - name: "developers"
+    description: "Lets the user retrieve development studios that have been working on Nintendo consoles."
+  - name: "licenses"
+    description: "Lets the user retrieve Nintendo game licenses."
+
+paths:
+  ### /auth route ###
+  /auth/register:
+    $ref: "./paths/auth/register.yaml"
+
+  /auth/login:
+    $ref: "./paths/auth/login.yaml"
+  
+  /auth/logout:
+    $ref: "./paths/auth/logout.yaml"
+
+  ### /users route ###
+  /users:
+    $ref: "./paths/users/getUsers.yaml"
+
+  /users/add:
+    $ref: "./paths/users/addUser.yaml"
+  
+  /users/{id}:
+    $ref: "./paths/users/getUserById.yaml"
+
+  /users/{id}/delete:
+    $ref: "./paths/users/deleteUserById.yaml"
+
+  /users/{id}/update:
+    $ref: "./paths/users/updateUserById.yaml"
+
+  ### /consoles route ###
+  /consoles:
+    $ref: "./paths/consoles/getConsoles.yaml"
+
+  /consoles/add:
+    $ref: "./paths/consoles/addConsole.yaml"
+
+  /consoles/{id}:
+    $ref: "./paths/consoles/getConsoleById.yaml"
+
+  /consoles/{id}/delete:
+    $ref: "./paths/consoles/deleteConsoleById.yaml"
+
+  /consoles/{id}/update:
+    $ref: "./paths/consoles/updateConsoleById.yaml"
+
+  ### /consoles/{id}/games
+  /consoles/{console_id}/games:
+    $ref: "./paths/consoles/games/getConsoleGames.yaml"
+
+  /consoles/{console_id}/games/{game_id}:
+    $ref: "./paths/consoles/games/getConsoleGameById.yaml"
+
+  /consoles/{console_id}/games/search:
+    $ref: "./paths/consoles/games/searchConsoleGames.yaml"
+  
+  ### /games route
+  /games:
+    $ref: "./paths/games/getGames.yaml"
+
+  /games/add:
+    $ref: "./paths/games/addGame.yaml"
+
+  /games/{id}:
+    $ref: "./paths/games/getGameById.yaml"
+
+  /games/{id}/delete:
+    $ref: "./paths/games/deleteGameById.yaml"
+
+  /games/{id}/update:
+    $ref: "./paths/games/updateGameById.yaml"  
+
+  ### /developers route ###
+  /developers:
+    $ref: "./paths/developers/getDevelopers.yaml"
+
+  /developers/add:
+    $ref: "./paths/developers/addDeveloper.yaml"
+
+  /developers/{id}:
+    $ref: "./paths/developers/getDeveloperById.yaml"
+
+  /developers/{id}/delete:
+    $ref: "./paths/developers/deleteDeveloperById.yaml"
+
+  /developers/{id}/update:
+    $ref: "./paths/developers/updateDeveloperById.yaml"
+
+  ### /licenses route ###
+  /licenses:
+    $ref: "./paths/licenses/getLicenses.yaml"
+
+  /licenses/add:
+    $ref: "./paths/licenses/addLicense.yaml"
+
+  /licenses/{id}:
+    $ref: "./paths/licenses/getLicenseById.yaml"
+
+  /licenses/{id}/delete:
+    $ref: "./paths/licenses/deleteLicenseById.yaml"
+
+  /licenses/{id}/update:
+    $ref: "./paths/licenses/updateLicenseById.yaml"
+
+components:
+  schemas:
+    $ref: "./schemas.yaml"
+
+  parameters:
+    idInPath:
+      $ref: "./parameters/idInPath.yaml"
+
+    queryInURL:
+      $ref: "./parameters/queryInURL.yaml"
+
+    langInURL:
+      $ref: "./parameters/langInURL.yaml"
+
+  requestBodies:
+    UserCreation:
+      $ref: "./requestBodies/UserCreation.yaml"
+    
+    UserEdit:
+      $ref: "./requestBodies/UserEdit.yaml"
+
+    ConsoleCreation:
+      $ref: "./requestBodies/ConsoleCreation.yaml"
+
+    ConsoleEdit:
+      $ref: "./requestBodies/ConsoleEdit.yaml"
+
+    GameCreation:
+      $ref: "./requestBodies/GameCreation.yaml"
+
+    GameEdit:
+      $ref: "./requestBodies/GameEdit.yaml"
+
+    DeveloperCreation:
+      $ref: "./requestBodies/DeveloperCreation.yaml"
+
+    DeveloperEdit:
+      $ref: "./requestBodies/DeveloperEdit.yaml"
+
+    LicenseCreation:
+      $ref: "./requestBodies/LicenseCreation.yaml"
+
+    LicenseEdit:
+      $ref: "./requestBodies/LicenseEdit.yaml"
+      
+  responses:
+    OK:
+      $ref: "./responses/OK.yaml"
+
+    ResourceCreated:
+      $ref: "./responses/ResourceCreated.yaml"
+
+    NotModified:
+      $ref: "./responses/NotModified.yaml"
+
+    NotFound:
+      $ref: "./responses/NotFound.yaml"
+
+    InvalidBody:
+      $ref: "./responses/InvalidBody.yaml" 
+
+    Forbidden:
+      $ref: "./responses/Forbidden.yaml"
+
+    InternalServerError:
+      $ref: "./responses/InternalServerError.yaml"
+
+  securitySchemes:
+    BearerAuth:
+      $ref: "./securitySchemes/BearerAuth.yaml"

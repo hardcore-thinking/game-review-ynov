@@ -1,0 +1,15 @@
+post:
+      tags:
+        - "auth"
+      summary: "Register to the API."
+      requestBody:
+        $ref: "../../requestBodies/UserCreation.yaml"
+      responses:
+        "201":
+          description: "Created."
+        "400":
+          description: "Bad request."
+        "409":
+          description: "Already exists."
+        "500":
+          description: "Internal server error."

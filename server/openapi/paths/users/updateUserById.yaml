@@ -1,0 +1,24 @@
+post:
+  tags:
+    - "users"
+  security:
+    - BearerAuth: []
+  summary: "Update a user in the registered users."
+  operationId: updateUserById
+  parameters:
+    - $ref: "../../parameters/idInPath.yaml"
+  requestBody:
+    $ref: "../../requestBodies/UserEdit.yaml"
+  responses:
+    "200":
+      $ref: "../../responses/OK.yaml"
+    "304":
+      $ref: "../../responses/NotModified.yaml"
+    "400":
+      $ref: "../../responses/InvalidBody.yaml"
+    "401":
+      $ref: "../../responses/Unauthorized.yaml"
+    "403":
+      $ref: "../../responses/Forbidden.yaml"
+    "500":
+      $ref: "../../responses/InternalServerError.yaml"

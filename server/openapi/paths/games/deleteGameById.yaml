@@ -1,0 +1,30 @@
+delete:
+  tags:
+    - "games"
+  security:
+    - BearerAuth: []
+  summary: "Delete a game by its id."
+  operationId: deleteGameById
+  parameters:
+    - $ref : "../../parameters/idInPath.yaml"
+  responses:
+    "200":
+      description: "Game deleted successfully."
+      content:
+        application/json:
+          schema:
+            type: object
+            required: [description]
+            properties:
+              description:
+                type: string
+                example: "OK"
+                default: "OK"
+    "204":
+      $ref: "../../responses/NoContent.yaml"
+    "401":
+      $ref: "../../responses/Unauthorized.yaml"
+    "403":
+      $ref: "../../responses/Forbidden.yaml"
+    "404":
+      $ref: "../../responses/NotFound.yaml"

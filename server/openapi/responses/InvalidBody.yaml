@@ -1,0 +1,11 @@
+description: "The body sent to the request is invalid."
+content:
+  application/json:
+    schema:
+      type: object
+      required: [description]
+      properties:
+        description:
+          type: string
+          default: "Bad request."
+          example: "Please make sure that all arguments on the body are correct."

@@ -1,0 +1,80 @@
+User:
+  type: object
+  properties:
+    username:
+      type: string
+      example: "New user"
+    password:
+      type: string
+      example: "new_password"
+    role:
+      type: string
+      example: "admin"
+    registered_at:
+      type: string
+      format: date
+      example: "2024-01-30"
+
+UserList:
+  type: array
+  items:
+    $ref: "#/User"
+
+Console:
+  type: object
+  properties:
+    name:
+      type: string
+      example: "Wii"
+    release_date:
+      type: string
+      format: date
+      example: "2006-12-08"
+
+ConsoleList:
+  type: array
+  items:
+    $ref: "#/Console"
+
+Game:
+  type: object
+  properties:
+    title:
+      type: string
+      example: "Super Mario Galaxy"
+    description:
+      type: string
+      example: "Super Mario Galaxy is a captivating space adventure featuring Mario exploring imaginative planets and galaxies. Players navigate through diverse gravity fields, collecting Power Stars to progress. With stunning visuals, immersive soundtrack, and creative level design, it offers unforgettable gaming experience, leaving a lasting impact on the industry."
+    release_date:
+      type: string
+      format: date
+      example: "2007-11-01"
+
+GameList:
+  type: array
+  items:
+    $ref: "#/Game"
+
+Developer:
+  type: object
+  properties:
+    name:
+      type: string
+      example: "Nintendo"
+
+DeveloperList:
+  type: array
+  items:
+    $ref: "#/Developer"
+
+License:
+  type: object
+  properties:
+    name:
+      type: string
+      example: "Super Mario"
+
+LicenseList:
+  type: array
+  items:
+    $ref: "#/License"

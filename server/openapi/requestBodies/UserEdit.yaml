@@ -1,0 +1,8 @@
+required: true
+description: "User object that needs to be edited."
+content:
+  application/json:
+    schema:
+      required: [username, role]
+      allOf:
+        - $ref: '../schemas.yaml#/User'

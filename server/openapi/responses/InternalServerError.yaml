@@ -1,0 +1,11 @@
+description: "An internal server error occurred."
+content:
+  application/json:
+    schema:
+      type: object
+      required: [message]
+      properties:
+        description:
+          type: string
+          default: "Internal server error."
+          example: "An unknown server error occurred."

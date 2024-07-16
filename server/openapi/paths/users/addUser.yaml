@@ -1,0 +1,20 @@
+post:
+  tags:
+    - "users"
+  security:
+    - BearerAuth: []
+  summary: "Add a new user to the registered users."
+  operationId: addUser
+  requestBody:
+    $ref: "../../requestBodies/UserCreation.yaml"
+  responses:
+    "201":
+      $ref: "../../responses/ResourceCreated.yaml"
+    "400":
+      $ref: "../../responses/InvalidBody.yaml"
+    "401":
+      $ref: "../../responses/Unauthorized.yaml"
+    "403":
+      $ref: "../../responses/Forbidden.yaml"
+    "500":
+      $ref: "../../responses/InternalServerError.yaml"

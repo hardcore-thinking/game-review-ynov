@@ -1,0 +1,20 @@
+delete:
+  tags:
+    - "users"
+  security:
+    - BearerAuth: []
+  summary: "Delete a user by their id."
+  operationId: deleteUserById
+  parameters:
+    - $ref : "../../parameters/idInPath.yaml"
+  responses:
+    "200":
+      $ref: "../../responses/OK.yaml"
+    "204":
+      $ref: "../../responses/NoContent.yaml"
+    "491":
+      $ref: "../../responses/Unauthorized.yaml"
+    "403":
+      $ref: "../../responses/Forbidden.yaml"
+    "404":
+      $ref: "../../responses/NotFound.yaml"

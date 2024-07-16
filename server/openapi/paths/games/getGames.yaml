@@ -1,0 +1,17 @@
+get:
+  tags:
+    - "games"
+  summary: "Returns all games."
+  description: "Return all the games already existing on the API."
+  operationId: getGames
+  parameters:
+    - $ref: "../../parameters/langInURL.yaml"
+  responses:
+    "200":
+      description: "Games retrieved successfully."
+      content:
+        application/json:
+          schema:
+            $ref: "../../schemas.yaml#/GameList"
+    "500":
+      $ref: "../../responses/InternalServerError.yaml"

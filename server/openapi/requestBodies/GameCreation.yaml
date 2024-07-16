@@ -1,0 +1,8 @@
+required: true
+description: "Game object that needs to be created."
+content:
+  application/json:
+    schema:
+      required: [title]
+      allOf:
+        - $ref: '../schemas.yaml#/Game'

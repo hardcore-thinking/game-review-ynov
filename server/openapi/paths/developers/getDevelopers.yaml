@@ -1,0 +1,15 @@
+get:
+  tags:
+    - "developers"
+  summary: "Returns all development studio."
+  description: "Return all the development studios already existing on the API."
+  operationId: getDevelopers
+  responses:
+    "200":
+      description: "Development studios retrieved successfully."
+      content:
+        application/json:
+          schema:
+            $ref: "../../schemas.yaml#/DeveloperList"
+    "500":
+      $ref: "../../responses/InternalServerError.yaml"

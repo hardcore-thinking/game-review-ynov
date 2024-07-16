@@ -1,0 +1,15 @@
+get:
+  tags:
+    - "licenses"
+  summary: "Returns all the licenses."
+  description: "Return all the Nintendo licenses registered on the API."
+  operationId: getLicenses
+  responses:
+    "200":
+      description: "Licenses retrieved successfully."
+      content:
+        application/json:
+          schema:
+            $ref: "../../schemas.yaml#/LicenseList"
+    "500":
+      $ref: "../../responses/InternalServerError.yaml"

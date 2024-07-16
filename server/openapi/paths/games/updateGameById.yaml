@@ -1,0 +1,24 @@
+post:
+  tags:
+    - "games"
+  security:
+    - BearerAuth: []
+  summary: "Update a game in the already existing games."
+  operationId: updateGameById
+  parameters:
+    - $ref: "../../parameters/idInPath.yaml"
+  requestBody:
+    $ref: "../../requestBodies/GameEdit.yaml"
+  responses:
+    "200":
+      $ref: "../../responses/OK.yaml"
+    "304":
+      $ref: "../../responses/NotModified.yaml"
+    "400":
+      $ref: "../../responses/InvalidBody.yaml"
+    "401":
+      $ref: "../../responses/Unauthorized.yaml"
+    "403":
+      $ref: "../../responses/Forbidden.yaml"
+    "500":
+      $ref: "../../responses/InternalServerError.yaml"

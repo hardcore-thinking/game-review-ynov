@@ -1,0 +1,25 @@
+get:
+  tags:
+    - "users"
+  security:
+    - BearerAuth: []
+  summary: "Super admin and admin specific option. Returns a specific user from their id."
+  description: "Return a specific user by their id."
+  operationId: getUserById
+  parameters:
+    - $ref: "../../parameters/idInPath.yaml"
+  responses:
+    "200":
+      description: "User retrieved successfully."
+      content:
+        application/json:
+          schema:
+            properties:
+              description:
+                type: string
+                default: "OK"
+                example: "OK"
+              user:
+                $ref: "../../schemas.yaml#/User"
+    "500":
+      $ref: "../../responses/InternalServerError.yaml"

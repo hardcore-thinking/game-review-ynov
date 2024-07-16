@@ -1,0 +1,16 @@
+description: "The resource has been created."
+content:
+  application/json:
+    schema:
+      type: object
+      required : [id]
+      properties:
+        description:
+          type: string
+          default: "Created."
+          example: "Created."
+        
+        id:
+          type: integer
+          example: 1
+          description: "The id of the ressource created."

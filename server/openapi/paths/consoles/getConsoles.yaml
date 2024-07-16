@@ -1,0 +1,17 @@
+get:
+  tags:
+    - "consoles"
+  summary: "Returns all the consoles."
+  description: "Return all the Nintendo consoles registered on the API."
+  operationId: getConsoles
+  parameters:
+    - $ref: "../../parameters/langInURL.yaml"
+  responses:
+    "200":
+      description: "Consoles retrieved successfully."
+      content:
+        application/json:
+          schema:
+            $ref: "../../schemas.yaml#/GameList"
+    "500":
+      $ref: "../../responses/InternalServerError.yaml"

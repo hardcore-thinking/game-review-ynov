@@ -1,0 +1,15 @@
+get:
+  tags:
+    - "licenses"
+  summary: "Returns a specific license user from its id."
+  description: "Return a specific license by its id."
+  operationId: getLicenseById
+  responses:
+    "200":
+      description: "License retrieved successfully."
+      content:
+        application/json:
+          schema:
+            $ref: "../../schemas.yaml#/License"
+    "500":
+      $ref: "../../responses/InternalServerError.yaml"

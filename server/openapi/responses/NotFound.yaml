@@ -1,0 +1,11 @@
+description: "The resource specified was not found."
+content:
+  application/json:
+    schema:
+      type: object
+      required: [description]
+      properties:
+        description:
+          type: string
+          default: "Not found."
+          example: "The ressource with this id was not found."

@@ -1,0 +1,23 @@
+post:
+      tags:
+        - "auth"
+      summary: "Login to the API."
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required: [username, password]
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+      responses:
+        "200":
+          description: "OK."
+        "400":
+          description: "Bad request."
+        "404":
+          description: "Not found."
+        "500":
+          description: "Internal server error."

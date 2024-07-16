@@ -1,0 +1,21 @@
+get:
+  tags:
+    - "consoles"
+  summary: "Returns all games of a specific console based on a user given query."
+  description: "Return all the games already existing on the API for one specific console using a user query."
+  operationId: searchConsoleGames
+  parameters:
+    - $ref: "../../../parameters/queryInURL.yaml"
+  responses:
+    "200":
+      description: "Games found for the query."
+      content:
+        application/json:
+          schema:
+            $ref: "../../../schemas.yaml#/GameList"
+    "400":
+      $ref: "../../../responses/InvalidBody.yaml"
+    "404":
+      $ref: "../../../responses/NotFound.yaml"
+    "500":
+      $ref: "../../../responses/InternalServerError.yaml"

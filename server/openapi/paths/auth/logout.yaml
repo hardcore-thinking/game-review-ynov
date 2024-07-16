@@ -1,0 +1,15 @@
+post:
+      tags:
+        - "auth"
+      summary: "Logout from the API."
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required: [username]
+              properties:
+                username:
+                  type: string
+      responses:
+        "200":
+          description: "OK."

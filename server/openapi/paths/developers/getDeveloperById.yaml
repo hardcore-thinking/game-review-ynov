@@ -1,0 +1,15 @@
+get:
+  tags:
+    - "developers"
+  summary: "Return a specific development studio from its id."
+  description: "Return a specific development studio from its id."
+  operationId: getDeveloperById
+  responses:
+    "200":
+      description: "Development studio retrieved successfully."
+      content:
+        application/json:
+          schema:
+            $ref: "../../schemas.yaml#/Developer"
+    "500":
+      $ref: "../../responses/InternalServerError.yaml"

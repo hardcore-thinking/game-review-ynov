@@ -1,0 +1,18 @@
+get:
+  tags:
+    - "consoles"
+  summary: "Returns a specific console user from its id."
+  description: "Return a specific console by its id."
+  operationId: getConsoleById
+  parameters:
+    - $ref: "../../parameters/idInPath.yaml"
+    - $ref: "../../parameters/langInURL.yaml"
+  responses:
+    "200":
+      description: "Console retrieved successfully."
+      content:
+        application/json:
+          schema:
+            $ref: "../../schemas.yaml#/Console"
+    "500":
+      $ref: "../../responses/InternalServerError.yaml"

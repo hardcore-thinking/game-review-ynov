@@ -1,0 +1,15 @@
+get:
+  tags:
+    - "consoles"
+  summary: "Returns a spcific game of a specific console."
+  description: "Return a specific game already existing on the API for one specific console."
+  operationId: getConsoleGameById
+  responses:
+    "200":
+      description: "Game retrieved successfully."
+      content:
+        application/json:
+          schema:
+            $ref: "../../../schemas.yaml#/Game"
+    "500":
+      $ref: "../../../responses/InternalServerError.yaml"

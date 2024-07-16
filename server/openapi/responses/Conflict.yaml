@@ -1,0 +1,11 @@
+description: "The request is OK but the data conflicts with the ones already in the server."
+content:
+  application/json:
+    schema:
+      type: object
+      required: [description]
+      properties:
+        description:
+          type: string
+          default: "Conflict."
+          example: "Already exists."

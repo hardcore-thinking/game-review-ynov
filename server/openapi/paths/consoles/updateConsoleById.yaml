@@ -1,0 +1,22 @@
+post:
+  tags:
+    - "consoles"
+  security:
+    - BearerAuth: []
+  summary: "Update a console in the already existing consoles."
+  operationId: updateConsoleById
+  requestBody:
+    $ref: "../../requestBodies/ConsoleEdit.yaml"
+  responses:
+    "200":
+      $ref: "../../responses/OK.yaml"
+    "304":
+      $ref: "../../responses/NotModified.yaml"
+    "400":
+      $ref: "../../responses/InvalidBody.yaml"
+    "401":
+      $ref: "../../responses/Unauthorized.yaml"
+    "403":
+      $ref: "../../responses/Forbidden.yaml"
+    "500":
+      $ref: "../../responses/InternalServerError.yaml"

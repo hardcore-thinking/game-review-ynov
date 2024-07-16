@@ -1,0 +1,11 @@
+description: "The request is OK but the user didn't authenticate to the API or the JWT has expired."
+content:
+  application/json:
+    schema:
+      type: object
+      required: [description]
+      properties:
+        description:
+          type: string
+          default: "Unauthorized."
+          example: "No credentials provided or the token has expired."

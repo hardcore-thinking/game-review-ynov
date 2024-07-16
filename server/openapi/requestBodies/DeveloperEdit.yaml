@@ -1,0 +1,8 @@
+required: true
+description: "Developer studio object that needs to be edited."
+content:
+  application/json:
+    schema:
+      required: [name]
+      allOf:
+        - $ref: '../schemas.yaml#/Developer'
