@@ -1,4 +1,5 @@
 import { app } from './app';
+import cors from 'cors';
 import genreRoutes from './routers/genres';
 import platformRoutes from './routers/platforms';
 import reviewRoutes from './routers/reviews';
@@ -7,6 +8,8 @@ import gameRoutes from './routers/games';
 import authRoutes from './routers/auth';
 
 app.use(express.json());
+app.use(cors());
+
 app.use('/auth', authRoutes);
 app.use('/users', userRoutes);
 app.use('/games', gameRoutes);
