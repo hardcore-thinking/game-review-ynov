@@ -1,0 +1,10 @@
+.App {
+	margin-top: 64px;
+  	background-color: #212124;
+  	text-align: center;
+}
+
+.Home {
+	display: flex;
+	align-items: center;
+}
