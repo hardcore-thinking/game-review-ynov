@@ -1,0 +1,60 @@
+.Home {
+	margin-top: 96px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 0px 10px 10px 10px;
+}
+
+.GameReview {
+	background-color: #6F7AA0;
+	cursor: pointer;
+	border: 1px solid white;
+	border-radius: 5px;
+	padding: 25px 10px;
+	margin-right: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-width: 20%;
+}
+
+.GameReview h3 {
+	color: white;
+}
+
+.GameReview div	 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 25%;
+	height: 1.1em;
+	padding: 5px;
+	border: 1px solid white;
+	border-radius: 2px;
+	color: black;
+	font-weight: bold;
+}
+
+.GameReview img {
+	width: 60%;
+	height: auto;
+}
+
+.HorizontalScrollable {
+	display: flex;
+	flex-direction: row;
+	margin-top: 5px;
+	padding: 10px;
+	width: 95vw;
+	height: auto;
+	border-radius: 5px;
+	background-color: #4E5778;
+	overflow-x: scroll;
+	scrollbar-width: thin;
+}
+
+.HorizontalScrollableTitle {
+	display: block;
+	color: white;
+}

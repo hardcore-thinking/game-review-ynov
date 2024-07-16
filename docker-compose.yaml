@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  react:
+    image: game-review
+    build:
+      context: ./
+    restart: always
+    ports:
+      - "3008:3000"
+    links:
+      - "db:database"
+    volumes:
+       - ./game-review:/usr/src/app/game-review-ynov
+       - /usr/src/app/game-review/node_modules
+
+  db:
+    image: mysql:5.7
+    restart: always
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 'test'
+      MYSQL_DATABASE: games-reviews
