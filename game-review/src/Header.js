@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import React from 'react';
 
 import './Header.css'
+import { UserContext } from './App.js';
 
 export default function Header() {
-	const [clickedLogin, setClickedLogin] = useState(false);
-	const [clickedRegister, setClickedRegister] = useState(false);
+	const [attemptLogin, setAttemptLogin] = React.useState(false);
+	const userContext = React.useContext(UserContext);
 
 	return (
 		<>
@@ -13,8 +14,10 @@ export default function Header() {
 					<h1> Game Review </h1>
 				</div>
 				<div id="Options">
-					<button id="Register" onClick={setClickedRegister}>Register</button>
-					<button id="Login" onClick={setClickedLogin}>Login</button>
+					<button id="Register"> Register </button>
+					<button id="Login" onClick={() => {
+						userContext.setAttemptLogin(true);
+					}}> Login </button>
 				</div>
 			</div>
 			

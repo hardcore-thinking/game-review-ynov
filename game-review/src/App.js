@@ -4,13 +4,17 @@ import './App.css';
 import Header from './Header.js';
 import Home from './Home.js';
 
-export let GlobalContext = React.createContext(null);
+export const UserContext = React.createContext(null);	
 
 function App() {
+	const [attemptLogin, setAttemptLogin] = React.useState(false);
+
 	return (
 		<>
-			<Header />
-			<Home />
+			<UserContext.Provider value={{attemptLogin, setAttemptLogin}}>
+				<Header />
+				<Home />
+			</UserContext.Provider>
 		</>
 	);
 }

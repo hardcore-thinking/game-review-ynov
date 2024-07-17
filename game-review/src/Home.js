@@ -1,13 +1,13 @@
-import { useState } from 'react';
+import React from 'react';
 
 import './Home.css';
-
-let debugLogin = false;
+import { UserContext } from './App.js';
 
 function LoginPopup() {
+	const userContext = React.useContext(UserContext);
+
 	function completeLoggingIn(event) {
 		event.preventDefault();
-		debugLogin = true;
 	}
 
 	return (
@@ -109,7 +109,9 @@ function HorizontalScrollable({title}) {
 }
 
 export default function Home() {
-	document.body.style.overflow = debugLogin ? "hidden" : "scroll";
+	const userContext = React.useContext(UserContext);
+	const [loggedIn, setLoggedIn] = React.useState(false);
+	document.body.style.overflow = userContext.attemptLogin ? "hidden" : "scroll";
 
 	return (
 		<>
@@ -118,7 +120,7 @@ export default function Home() {
 				<HorizontalScrollable title="✨  Released lately ✨" />
 				<HorizontalScrollable title="💚 Recommended by our team 💚" />
 			</div>
-			{ debugLogin &&
+			{ userContext.attemptLogin &&
 				<LoginPopup />
 			}
 		</>
