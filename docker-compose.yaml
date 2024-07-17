@@ -6,12 +6,26 @@ services:
       target: react
     restart: always
     ports:
-      - "3008:3000"
-      - "3009:3001"
+      - 3008:3000
+      - 3009:3001
     links:
-      - "db:database"
-    #volumes:
-    #   - ./.:/usr/src/app/game-review-ynov
+      - db:database
+    volumes:
+       - ./game-review:/usr/src/app/
+
+  api:
+    container_name: api
+    build:
+      context: .
+      target: api
+    restart: always
+    ports:
+      - 8080:8080
+    links:
+      - db:database
+      - react:frontend
+    volumes:
+      - ./server:/usr/src/api
 
   db:
     container_name: database
@@ -24,3 +38,4 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: 'test'
       MYSQL_DATABASE: games-reviews
+

@@ -13,6 +13,19 @@ EXPOSE 3008-3009
 
 CMD ["serve", "-s", "build"]
 
+FROM node:18.10.0-alpine3.15 AS api
+
+WORKDIR /usr/src/api
+
+COPY ./server ./.
+
+RUN npm update
+RUN npm install
+
+EXPOSE 8080
+
+ENV NODE_ENV="production"
+
 FROM mysql:5.7 AS db
 
 WORKDIR /usr/src/app
