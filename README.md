@@ -23,7 +23,8 @@
 ### Fonctionnalités
 
 Le projet GameReview a pour but d'être une plateforme qui héberge la plus grande partie des avis utilisateurs sur les jeux vidéos.
-Grâce à cette plateforme, les utilisateurs voulant acquérir un jeu pourront avoir des avis honnête des joueurs sur celui-ci, plutôt que ceux des journalistes.
+La plateforme recense la plus grande majorité de jeux possible et leurs informations essentielles.
+Grâce à celle-ci, les utilisateurs voulant acquérir un jeu pourront avoir des avis honnêtes des joueurs sur celui-ci, plutôt que ceux des journalistes.
 
 Les utilisateurs ont la possiblitée de consulter les avis et les notes des jeux anonymement mais pas en poster.
 Pour celà ils doivent se connecter avec leurs identifiants ou dans le cas échant en créer.
