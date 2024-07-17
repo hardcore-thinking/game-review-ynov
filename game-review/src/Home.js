@@ -11,7 +11,7 @@ function LoginPopup() {
 	}
 
 	return (
-		<div className="LoginPopup">
+		<div className="LoginPopup" style={{ marginTop: document.body.scrollTop }}>
 			<div className="LoginFormWrapper">
 				<h2> Login </h2>
 				<hr />

@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize');
 
 const sequelize = new Sequelize('GameReviews', 'root', 'test', {
-    host: '172.19.0.2',
+    host: '172.28.0.4',
     dialect: 'mysql',
 });
 

@@ -6,7 +6,7 @@ import Home from './Home.js';
 
 export const UserContext = React.createContext(null);	
 
-function App() {
+async function App() {
 	const [attemptLogin, setAttemptLogin] = React.useState(false);
 
 	return (
@@ -15,6 +15,9 @@ function App() {
 				<Header />
 				<Home />
 			</UserContext.Provider>
+			<div>
+				{ await fetch("http://172.28.0.3:8080/games") };
+			</div>
 		</>
 	);
 }
