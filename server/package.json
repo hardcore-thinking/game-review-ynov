@@ -1,7 +1,7 @@
 {
-  "name": "nintendo-consoles-api-ynov",
+  "name": "game-review-api-ynov",
   "version": "1.0.0",
-  "description": "API sur les consoles de Nintendo à faire dans le cadre du projet final du cours de Développement API",
+  "description": "API sur les game review à faire dans le cadre du suivit de projet",
   "main": "app.js",
   "directories": {
     "test": "tests"
