@@ -12,6 +12,8 @@ services:
       - db:database
     volumes:
        - ./game-review:/usr/src/app/
+    networks:
+      - bridge-frontend
 
   api:
     container_name: api
@@ -26,6 +28,8 @@ services:
       - react:frontend
     #volumes:
     #  - ./server:/usr/src/api
+    networks:
+      - bridge-api
 
   db:
     container_name: database
@@ -38,4 +42,13 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: 'test'
       MYSQL_DATABASE: games-reviews
+    networks:
+      - bridge-db
 
+networks:
+  bridge-frontend:
+    driver: bridge
+  bridge-api:
+    driver: bridge
+  bridge-db:
+    driver: bridge
