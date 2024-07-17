@@ -1,4 +1,6 @@
-import { app } from './app';
+const express = require('express')
+const app = express()
+
 import cors from 'cors';
 import genreRoutes from './routers/genres';
 import platformRoutes from './routers/platforms';
