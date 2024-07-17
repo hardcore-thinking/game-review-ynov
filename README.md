@@ -11,7 +11,6 @@
 - **Back-end** : NodeJS
 - **API** : ExpressJS
 - **BDD** : MySQL
-- **Serveur Web** : Apache
 - **Versionning** : Git / GitHub
 
 
