@@ -8,7 +8,7 @@
 ### Technologies utilisées
 
 - **Front-end** : ReactJS
-- **Back-end** : ExpressJS
+- **Back-end** : NodeJS
 - **API** : ExpressJS
 - **BDD** : MySQL
 - **Serveur Web** : Apache
