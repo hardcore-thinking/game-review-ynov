@@ -24,6 +24,8 @@ RUN npm install
 
 EXPOSE 8080
 
+CMD ["npm", "run", "start"]
+
 ENV NODE_ENV="production"
 
 FROM mysql:5.7 AS db
